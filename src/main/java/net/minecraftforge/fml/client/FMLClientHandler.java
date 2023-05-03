@@ -219,13 +219,6 @@ public class FMLClientHandler implements IFMLSidedHandler
         this.resourcePackList = resourcePackList;
         this.metaSerializer = metaSerializer;
         this.resourcePackMap = Maps.newHashMap();
-        if (minecraft.isDemo())
-        {
-            FMLLog.log.fatal("DEMO MODE DETECTED, FML will not work. Finishing now.");
-            haltGame("FML will not run in demo mode", new RuntimeException());
-            return;
-        }
-
         List<String> injectedModContainers = FMLCommonHandler.instance().beginLoading(this);
         try
         {
